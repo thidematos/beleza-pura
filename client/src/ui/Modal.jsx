@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Modal() {
-  const { toggleModal, modalContent } = useUI();
+  const { toggleModal, modalContent, modalWidth } = useUI();
 
   useEffect(() => {
     document.body.style.height = "100vh";
@@ -24,7 +24,9 @@ function Modal() {
         toggleModal({ status: false, component: null });
       }}
     >
-      <div className="centerXY absolute z-[999] min-h-[20%] rounded-lg bg-gray-100">
+      <div
+        className={`${modalWidth} centerXY absolute z-[999] min-h-[20%] rounded-lg bg-gray-100`}
+      >
         <div className="relative h-full w-full">
           <FontAwesomeIcon
             icon={faXmark}

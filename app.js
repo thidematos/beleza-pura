@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 
 const produtoRouter = require('./routers/produtoRouter');
+const procedimentoRouter = require('./routers/procedimentoRouter');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/v1/produtos', produtoRouter);
+app.use('/api/v1/procedimentos', procedimentoRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {

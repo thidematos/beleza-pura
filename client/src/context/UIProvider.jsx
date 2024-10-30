@@ -5,6 +5,7 @@ const UIContext = createContext();
 const initials = {
   isOpenModal: false,
   modalContent: null,
+  modalWidth: "w-auto",
 };
 
 function reducer(state, action) {
@@ -14,27 +15,31 @@ function reducer(state, action) {
         ...state,
         isOpenModal: action.payload.status,
         modalContent: action.payload.component || null,
+        modalWidth: action.payload.width,
       };
   }
 }
 
 function UIProvider({ children }) {
-  const [{ isOpenModal, modalContent }, dispatch] = useReducer(
+  const [{ isOpenModal, modalContent, modalWidth }, dispatch] = useReducer(
     reducer,
     initials,
   );
 
-  const toggleModal = ({ status, component }) =>
+  const toggleModal = ({ status, component, width = "w-auto" }) =>
     dispatch({
       type: "modal/toggle",
       payload: {
         status,
         component,
+        width,
       },
     });
 
   return (
-    <UIContext.Provider value={{ isOpenModal, toggleModal, modalContent }}>
+    <UIContext.Provider
+      value={{ isOpenModal, toggleModal, modalContent, modalWidth }}
+    >
       {children}
     </UIContext.Provider>
   );
