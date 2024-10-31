@@ -6,6 +6,7 @@ import formatPricing from "../../utils/formatPricing";
 import { useProcedimento } from "../../context/ProcedimentoProvider";
 import OptionsMenu from "../../ui/OptionsMenu";
 import { deleteProcedimento } from "../../services/procedimentos";
+import Update from "./Update";
 
 function Table() {
   const { isPending, procedimentos } = useGetProcedimentos();
@@ -25,7 +26,28 @@ function Table() {
     return status;
   });
 
-  console.log(filteredProcedimentos);
+  const filteredProcedimentosWithDuration = filteredProcedimentos?.filter(
+    (procedimento) => {
+      if (filters.duracao.length === 0) return true;
+
+      let status = false;
+
+      filters.duracao.forEach((intervalo) => {
+        const [start, end] = [
+          Number(intervalo.slice(0, 2)),
+          Number(intervalo.slice(2)),
+        ];
+        status =
+          procedimento.duracao >= start && procedimento.duracao <= end
+            ? true
+            : false;
+
+        if (start === 61) status = procedimento.duracao >= start ? true : false;
+      });
+
+      return status;
+    },
+  );
 
   if (isPending)
     return (
@@ -48,7 +70,7 @@ function Table() {
           </TableRow>
         </thead>
         <tbody className="col-span-5">
-          {filteredProcedimentos
+          {filteredProcedimentosWithDuration
             .sort((a, b) => b.preco - a.preco)
             .map((procedimento) => (
               <TableRow
@@ -86,7 +108,7 @@ function Table() {
                     dataID={procedimento._id}
                     queryKey={"procedimentos"}
                     dataTitle={"procedimento"}
-                    updateComponent={<h1>oi</h1>}
+                    updateComponent={<Update procedimento={procedimento} />}
                     mutateFunction={deleteProcedimento}
                   />
                 </TableColumn>

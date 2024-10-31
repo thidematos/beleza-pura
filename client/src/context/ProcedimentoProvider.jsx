@@ -29,7 +29,11 @@ function reducer(state, action) {
         ...state,
         filters: {
           ...state.filters,
-          duracao: "teste",
+          duracao: action.payload.hasFilter
+            ? state.filters.duracao.filter(
+                (intervalo) => intervalo !== action.payload.intervalo.join(""),
+              )
+            : [...state.filters.duracao, action.payload.intervalo.join("")],
         },
       };
   }
@@ -38,7 +42,17 @@ function reducer(state, action) {
 function ProcedimentoProvider({ children }) {
   const [{ filters }, dispatch] = useReducer(reducer, initials);
 
-  function toggleDuracaoFilter() {}
+  console.log(filters);
+
+  function toggleDuracaoFilter(intervalo) {
+    dispatch({
+      type: "filter/duracao",
+      payload: {
+        hasFilter: filters.duracao.includes(intervalo.join("")),
+        intervalo: intervalo,
+      },
+    });
+  }
 
   function toggleProdutoFilter(produtoID) {
     dispatch({
@@ -51,7 +65,9 @@ function ProcedimentoProvider({ children }) {
   }
 
   return (
-    <ProcedimentoContext.Provider value={{ filters, toggleProdutoFilter }}>
+    <ProcedimentoContext.Provider
+      value={{ filters, toggleProdutoFilter, toggleDuracaoFilter }}
+    >
       {children}
     </ProcedimentoContext.Provider>
   );

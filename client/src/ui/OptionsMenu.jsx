@@ -21,6 +21,7 @@ function OptionsMenu({
           toggleModal({
             status: true,
             component: updateComponent,
+            width: "w-[40%]",
           });
         }}
       />

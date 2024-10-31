@@ -18,7 +18,7 @@ function ProdutosTable() {
   if (isPending) return <Loader size="250px" />;
 
   return (
-    <table className="col-span-8 grid w-full grid-cols-6 place-content-start border border-gray-300">
+    <table className="col-span-8 grid w-full grid-cols-6 items-center border border-gray-300 text-center">
       <thead className="col-span-6 w-full">
         <TableRow>
           <TableColumn isHead={true}>Produto</TableColumn>

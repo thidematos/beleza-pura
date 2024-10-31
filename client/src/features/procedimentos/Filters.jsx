@@ -61,6 +61,8 @@ function Produtos() {
 }
 
 function Duracao() {
+  const { toggleDuracaoFilter } = useProcedimento();
+
   return (
     <div className="grid w-full grid-cols-3 pb-4">
       <p className="col-span-3 pb-4 text-center text-xs font-semibold">
@@ -68,18 +70,38 @@ function Duracao() {
       </p>
       <div className="col-span-1 grid grid-rows-4 items-center justify-center gap-3">
         <div className="row-span-1">
-          <input type="checkbox" id="15-30" value={[15, 30]} />
+          <input
+            type="checkbox"
+            id="15-30"
+            value={JSON.stringify([15, 30])}
+            onChange={(e) => toggleDuracaoFilter(JSON.parse(e.target.value))}
+          />
         </div>
 
         <div className="row-span-1">
-          <input type="checkbox" id="30-45" value={[31, 45]} />
+          <input
+            type="checkbox"
+            id="30-45"
+            value={JSON.stringify([31, 45])}
+            onChange={(e) => toggleDuracaoFilter(JSON.parse(e.target.value))}
+          />
         </div>
 
         <div className="row-span-1">
-          <input type="checkbox" id="45-60" value={[46, 60]} />
+          <input
+            type="checkbox"
+            id="45-60"
+            value={JSON.stringify([46, 60])}
+            onChange={(e) => toggleDuracaoFilter(JSON.parse(e.target.value))}
+          />
         </div>
         <div className="row-span-1">
-          <input type="checkbox" id="more60" value={[61]} />
+          <input
+            type="checkbox"
+            id="more60"
+            value={JSON.stringify([61])}
+            onChange={(e) => toggleDuracaoFilter(JSON.parse(e.target.value))}
+          />
         </div>
       </div>
       <div className="col-span-2 grid grid-rows-4 items-center gap-3 text-xs">

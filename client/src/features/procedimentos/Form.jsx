@@ -11,15 +11,24 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCreateProcedimento } from "./useCreateProcedimento";
+import { useUpdateProcedimento } from "./useUpdateProcedimento";
 
-function Form() {
-  const { register, handleSubmit, getValues, setValue } = useForm();
+function Form({ isUpdate = false }) {
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: isUpdate,
+  });
 
   const { isPending: isCreating, newProcedimento } = useCreateProcedimento();
 
+  const { isPending: isUpdating, updateProcedimentoFn } = useUpdateProcedimento(
+    isUpdate?.id,
+  );
+
   const [isPending, produtos] = useGetProdutos();
 
-  const [selectedProdutos, setSelectedProdutos] = useState([]);
+  const [selectedProdutos, setSelectedProdutos] = useState(() =>
+    isUpdate ? isUpdate.produtos : [],
+  );
 
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
 
@@ -32,9 +41,9 @@ function Form() {
   return (
     <form
       className="grid grid-cols-2 gap-6"
-      onSubmit={handleSubmit(newProcedimento)}
+      onSubmit={handleSubmit(isUpdate ? updateProcedimentoFn : newProcedimento)}
     >
-      {isCreating ? (
+      {isCreating || isUpdating ? (
         <Loader size="size-[100px] col-span-2 place-self-center" />
       ) : (
         <>
