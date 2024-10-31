@@ -4,7 +4,7 @@ const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 
 exports.getAllProcedimentos = catchAsync(async (req, res, next) => {
-  const procedimentos = await Procedimento.find({});
+  const procedimentos = await Procedimento.find({}).populate('produtos');
 
   res.status(200).json({
     status: 'success',
@@ -18,7 +18,9 @@ exports.getSingleProcedimento = catchAsync(async (req, res, next) => {
   const procedimento = await Procedimento.findById(req.params.procedimentoID);
 
   if (!procedimento)
-    return new AppError('Não encontramos nenhum procedimento com esse ID', 404);
+    return next(
+      new AppError('Não encontramos nenhum procedimento com esse ID', 404)
+    );
 
   res.status(200).json({
     status: 'success',
@@ -38,7 +40,7 @@ exports.updateProcedimento = catchAsync(async (req, res, next) => {
   );
 
   if (!updatedProcedimento)
-    return new AppError('Houve um erro na atualização', 400);
+    return next(new AppError('Houve um erro na atualização', 400));
 
   res.status(200).json({
     status: 'success',

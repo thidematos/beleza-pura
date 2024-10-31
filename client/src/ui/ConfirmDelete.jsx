@@ -1,17 +1,16 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useUI } from "../context/UIProvider";
 import Button from "./Button";
-import { deleteProduto } from "../services/produtos";
 import toast from "react-hot-toast";
 import Loader from "./Loader";
 
-function ConfirmDelete({ dataTitle, dataID, queryKey }) {
+function ConfirmDelete({ dataTitle, dataID, queryKey, mutateFunction }) {
   const { toggleModal } = useUI();
 
   const queryClient = useQueryClient();
 
   const { isPending, mutate } = useMutation({
-    mutationFn: () => deleteProduto(dataID),
+    mutationFn: () => mutateFunction(dataID),
     onSuccess: () => {
       toast.success(
         `${dataTitle.at(0).toUpperCase() + dataTitle.slice(1)} deletado!`,

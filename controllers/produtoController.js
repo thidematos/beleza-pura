@@ -1,6 +1,7 @@
 const Produto = require('../models/produtoModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const Procedimentos = require('./../models/procedimentoModel');
 
 exports.getAllProdutos = catchAsync(async (req, res, next) => {
   const produtos = await Produto.find({});
@@ -31,7 +32,6 @@ exports.updateProduto = catchAsync(async (req, res, next) => {
 });
 
 exports.createProduto = catchAsync(async (req, res, next) => {
-  console.log(req.body);
   const { produto, quantidade = 0, preco, validade } = req.body;
 
   const newProduto = await Produto.create({
@@ -52,6 +52,19 @@ exports.createProduto = catchAsync(async (req, res, next) => {
 exports.deleteProduto = catchAsync(async (req, res, next) => {
   const { produtoId } = req.params;
 
+  const procedimentos = await Procedimentos.find({});
+
+  const procedimentosPromises = procedimentos.map(async (procedimento) => {
+    if (procedimento.produtos.includes(produtoId)) {
+      procedimento.produtos = procedimento.produtos.filter(
+        (produto) => String(produto) !== produtoId
+      );
+    }
+    await procedimento.save();
+  });
+
+  await Promise.all(procedimentosPromises);
+
   await Produto.findByIdAndDelete(produtoId);
 
   res.status(204).json({
@@ -66,7 +79,7 @@ exports.getSingleProduto = catchAsync(async (req, res, next) => {
   const produto = await Produto.findById(produtoId);
 
   if (!produto)
-    return new AppError('Nenhum produto foi achado com esse ID!', 404);
+    return next(new AppError('Nenhum produto foi achado com esse ID!', 404));
 
   res.status(200).json({
     status: 'success',

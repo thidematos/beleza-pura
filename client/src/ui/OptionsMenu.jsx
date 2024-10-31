@@ -1,10 +1,15 @@
 import { faGear, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useUI } from "../../context/UIProvider";
-import ConfirmDelete from "../../ui/ConfirmDelete";
-import UpdateProduto from "./UpdateProduto";
+import { useUI } from "../context/UIProvider";
+import ConfirmDelete from "./ConfirmDelete";
 
-function OptionsMenu({ dataID, queryKey, dataTitle, updateComponent }) {
+function OptionsMenu({
+  dataID,
+  queryKey,
+  dataTitle,
+  updateComponent,
+  mutateFunction,
+}) {
   const { toggleModal } = useUI();
 
   return (
@@ -30,6 +35,7 @@ function OptionsMenu({ dataID, queryKey, dataTitle, updateComponent }) {
                 dataTitle={dataTitle}
                 dataID={dataID}
                 queryKey={queryKey}
+                mutateFunction={mutateFunction}
               />
             ),
           })

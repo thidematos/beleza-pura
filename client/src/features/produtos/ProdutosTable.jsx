@@ -1,6 +1,6 @@
-import OptionsMenu from "./OptionsMenu";
-import TableColumn from "./TableColumn";
-import TableRow from "./TableRow";
+import OptionsMenu from "./../../ui/OptionsMenu";
+import TableColumn from "../../ui/TableColumn";
+import TableRow from "../../ui/TableRow";
 import Loader from "../../ui/Loader";
 import { format, isBefore } from "date-fns";
 import { ptBR } from "date-fns/locale";
@@ -8,6 +8,7 @@ import formatPricing from "../../utils/formatPricing";
 import { useGetProdutos } from "./useGetProdutos";
 import UpdateProduto from "./UpdateProduto";
 import { useProduto } from "../../context/ProdutoProvider";
+import { deleteProduto } from "../../services/produtos";
 
 function ProdutosTable() {
   const [isPending, produtos] = useGetProdutos();
@@ -54,6 +55,7 @@ function ProdutosTable() {
                   queryKey={"produtos"}
                   dataTitle="produto"
                   updateComponent={<UpdateProduto produtoID={produto._id} />}
+                  mutateFunction={deleteProduto}
                 />
               </TableColumn>
             </TableRow>

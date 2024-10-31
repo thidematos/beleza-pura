@@ -6,7 +6,7 @@ function CreateProcedimento() {
   const { toggleModal } = useUI();
 
   return (
-    <div className="markup relative col-span-2 flex flex-col items-center">
+    <div className="relative col-span-2 flex flex-col items-center">
       <Button
         onClick={() =>
           toggleModal({
