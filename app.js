@@ -6,6 +6,7 @@ const path = require('path');
 
 const produtoRouter = require('./routers/produtoRouter');
 const procedimentoRouter = require('./routers/procedimentoRouter');
+const equipamentoRouter = require('./routers/equipamentoRouter');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/produtos', produtoRouter);
 app.use('/api/v1/procedimentos', procedimentoRouter);
+app.use('/api/v1/equipamentos', equipamentoRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {

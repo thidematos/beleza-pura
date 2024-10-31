@@ -6,6 +6,7 @@ import { UIProvider } from "./context/UIProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
+import Equipamentos from "./pages/Equipamentos";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,7 +43,7 @@ function App() {
                 <Route path="agendamentos" element={<Procedimentos />} />
                 <Route path="contabilidade" element={<Procedimentos />} />
                 <Route path="produtos" element={<Produtos />} />
-                <Route path="equipamentos" element={<Procedimentos />} />
+                <Route path="equipamentos" element={<Equipamentos />} />
               </Route>
             </Routes>
           </BrowserRouter>
