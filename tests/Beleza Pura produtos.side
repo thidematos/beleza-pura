@@ -1,0 +1,329 @@
+{
+  "id": "d0bfeca1-39fa-4ea8-8964-52fb238db68b",
+  "version": "2.0",
+  "name": "Beleza Pura produtos",
+  "url": "https://beleza-pura.onrender.com",
+  "tests": [{
+    "id": "6037c515-7265-4450-854b-d2fa2af16487",
+    "name": "Read produtos",
+    "commands": [{
+      "id": "211dad37-bf79-43c3-894c-b6e9f501f0c5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7915666a-a5fe-4806-a575-436dbcec5a6d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "249a8f0c-ff1b-4d0b-b7e3-c6d80011e594",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4cf84742-4474-43ba-a7e2-7d4f863d1c20",
+    "name": "Create produto",
+    "commands": [{
+      "id": "b349f3ee-fc7c-4bcb-8b9c-22b8eb6e2039",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b064461-1cff-4c3b-b467-7343b1b6f971",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1dac505-48dd-4ba2-8879-a585079119c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55fb5496-63be-48fa-9e3d-6775c3ad2627",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fixed",
+      "targets": [
+        ["css=.fixed", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2dfb96bb-76e9-4da5-8fd6-c8d715a1e34d",
+      "comment": "",
+      "command": "click",
+      "target": "id=produto",
+      "targets": [
+        ["id=produto", "id"],
+        ["name=produto", "name"],
+        ["css=#produto", "css:finder"],
+        ["xpath=//input[@id='produto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0221b298-0066-48aa-9535-2be6d65cc88c",
+      "comment": "",
+      "command": "type",
+      "target": "id=produto",
+      "targets": [
+        ["id=produto", "id"],
+        ["name=produto", "name"],
+        ["css=#produto", "css:finder"],
+        ["xpath=//input[@id='produto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Selagem"
+    }, {
+      "id": "0f4b6cc8-da24-4107-8151-a143cf3fc66b",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtd",
+      "targets": [
+        ["id=qtd", "id"],
+        ["name=qtd", "name"],
+        ["css=#qtd", "css:finder"],
+        ["xpath=//input[@id='qtd']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "f0e817b6-5f39-4040-b945-8549cb7514f9",
+      "comment": "",
+      "command": "type",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.flex > #preco", "css:finder"],
+        ["xpath=(//input[@id='preco'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "3215d67a-846c-4dd5-b0a3-3ec5a812d863",
+      "comment": "",
+      "command": "type",
+      "target": "name=validade",
+      "targets": [
+        ["name=validade", "name"],
+        ["css=.flex > #validade", "css:finder"],
+        ["xpath=(//input[@id='validade'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "2029-11-30"
+    }, {
+      "id": "6b611b3b-8f15-44fc-803e-e34a3d67da8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-6",
+      "targets": [
+        ["css=.mt-6", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1bdaa786-2b1a-47c5-a5e5-d463e0a7d743",
+    "name": "Update produto",
+    "commands": [{
+      "id": "84e7035b-7bf5-473e-ae1d-f8703bf02183",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a129c9ff-661d-4918-a682-7038d658e008",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fae18902-4659-456a-b738-1acb1a4568e4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c11bdec9-82c7-4fe5-b9ce-1ccb5fb0d3b1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(1) > path",
+      "targets": [
+        ["css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a7e2982-a2ab-4ac8-bbd2-6643da64b4ec",
+      "comment": "",
+      "command": "click",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.flex > #preco", "css:finder"],
+        ["xpath=(//input[@id='preco'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19c03797-7fd8-4311-8370-158626e12980",
+      "comment": "",
+      "command": "type",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.flex > #preco", "css:finder"],
+        ["xpath=(//input[@id='preco'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "5c7ba8a4-3a3e-4c84-bdfb-d25497bb6136",
+      "comment": "",
+      "command": "click",
+      "target": "id=qtd",
+      "targets": [
+        ["id=qtd", "id"],
+        ["name=qtd", "name"],
+        ["css=#qtd", "css:finder"],
+        ["xpath=//input[@id='qtd']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "227c8604-6773-41e5-9b47-5518acffdb0e",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtd",
+      "targets": [
+        ["id=qtd", "id"],
+        ["name=qtd", "name"],
+        ["css=#qtd", "css:finder"],
+        ["xpath=//input[@id='qtd']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "121fab3d-69c6-42d1-a876-5453eefd6c74",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-6",
+      "targets": [
+        ["css=.mt-6", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "480e655a-c9bd-424a-8fa7-3372bb84f195",
+    "name": "Delete produto",
+    "commands": [{
+      "id": "22eca6bb-6483-4491-b477-6b4b390633ca",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54f0d6b7-078d-4bf2-8faa-3792d0a6677f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4605d9c9-b999-4c37-83ed-560d418efaff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72c54fdc-f74c-4741-9e3a-dcae2024a4db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f360d41-ed76-47f2-8183-4f481819683f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "53ab780a-0c83-4e12-a912-b44e61f2c71e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6037c515-7265-4450-854b-d2fa2af16487"]
+  }],
+  "urls": ["https://beleza-pura.onrender.com/"],
+  "plugins": []
+}
