@@ -132,45 +132,6 @@
       ],
       "value": "100"
     }, {
-      "id": "5613b7f4-0298-4016-a98a-79c563cf936d",
-      "comment": "",
-      "command": "type",
-      "target": "name=validade",
-      "targets": [
-        ["name=validade", "name"],
-        ["css=.flex > #validade", "css:finder"],
-        ["xpath=(//input[@id='validade'])[2]", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[4]/input", "xpath:idRelative"],
-        ["xpath=//div[4]/input", "xpath:position"]
-      ],
-      "value": "0002-11-30"
-    }, {
-      "id": "5b122be5-95e4-4a67-b7bd-be09d1aeef51",
-      "comment": "",
-      "command": "type",
-      "target": "name=validade",
-      "targets": [
-        ["name=validade", "name"],
-        ["css=.flex > #validade", "css:finder"],
-        ["xpath=(//input[@id='validade'])[2]", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[4]/input", "xpath:idRelative"],
-        ["xpath=//div[4]/input", "xpath:position"]
-      ],
-      "value": "0020-11-30"
-    }, {
-      "id": "68ea3ac5-d057-4937-8b3c-9dad92e60307",
-      "comment": "",
-      "command": "type",
-      "target": "name=validade",
-      "targets": [
-        ["name=validade", "name"],
-        ["css=.flex > #validade", "css:finder"],
-        ["xpath=(//input[@id='validade'])[2]", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[4]/input", "xpath:idRelative"],
-        ["xpath=//div[4]/input", "xpath:position"]
-      ],
-      "value": "0202-11-30"
-    }, {
       "id": "3215d67a-846c-4dd5-b0a3-3ec5a812d863",
       "comment": "",
       "command": "type",
