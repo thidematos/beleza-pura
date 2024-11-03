@@ -1,0 +1,352 @@
+{
+  "id": "0e390534-75a6-43ca-9ab5-f2798a1a6d5f",
+  "version": "2.0",
+  "name": "Beleza Pura procedimentos",
+  "url": "https://beleza-pura.onrender.com",
+  "tests": [{
+    "id": "a566f043-8a7d-41cc-8ba6-51552e363b31",
+    "name": "Read procedimentos",
+    "commands": [{
+      "id": "c171d6a0-5405-40e4-b75f-608c4eb3e1fa",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4e508e4-171d-4545-a505-bf061281c956",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50e32e5e-7cf1-41ac-a48b-2433bec9076c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(2)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Procedimentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/procedimentos')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5071562f-1174-4180-a8f6-df60ef4527f3",
+    "name": "Create procedimentos",
+    "commands": [{
+      "id": "b36d6edd-83c0-4b86-9999-92a1b07bfdee",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "936f51f4-eaa0-4dbd-8fbd-b3c88f7f11f7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c0c4efb5-3942-4714-b12a-3dce4469c0e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(2)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Procedimentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/procedimentos')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fbc0bd4-c38d-494f-9b37-9b30eb2e08fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fixed",
+      "targets": [
+        ["css=.fixed", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d763d817-8042-4841-90c1-27808d70ef8a",
+      "comment": "",
+      "command": "type",
+      "target": "id=procedimento",
+      "targets": [
+        ["id=procedimento", "id"],
+        ["name=procedimento", "name"],
+        ["css=#procedimento", "css:finder"],
+        ["xpath=//input[@id='procedimento']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": "Botox"
+    }, {
+      "id": "70b83e92-c861-4f8c-90e1-14fb1af8c9be",
+      "comment": "",
+      "command": "type",
+      "target": "id=preco",
+      "targets": [
+        ["id=preco", "id"],
+        ["name=preco", "name"],
+        ["css=#preco", "css:finder"],
+        ["xpath=//input[@id='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "200"
+    }, {
+      "id": "2f22d4ae-2b08-4081-bb2f-0f8dbacc2e23",
+      "comment": "",
+      "command": "type",
+      "target": "id=hora",
+      "targets": [
+        ["id=hora", "id"],
+        ["name=hora", "name"],
+        ["css=#hora", "css:finder"],
+        ["xpath=//input[@id='hora']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "0371696e-549d-4b48-9229-87841c62f796",
+      "comment": "",
+      "command": "click",
+      "target": "css=.rounded-t-lg > .text-sm",
+      "targets": [
+        ["css=.rounded-t-lg > .text-sm", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Selecionar produtos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bb39f92-b379-4dc9-944e-9c87f73ddc77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.rounded-b-lg:nth-child(5)",
+      "targets": [
+        ["css=.rounded-b-lg:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div[2]/div/div[2]/p[5]", "xpath:idRelative"],
+        ["xpath=//p[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffe0a36c-0fa2-4d7a-b951-03fa15029bea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-4",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cabcc60e-05d5-4caa-81fe-11eb5333660f",
+    "name": "Update procedimentos",
+    "commands": [{
+      "id": "29472af5-7a3f-47c7-ae4a-9c131cf81327",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "325d9978-ec72-4c00-baa5-ba1d32683f6b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23af3255-4fec-42a9-81a5-23f7925b3dbf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(2)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Procedimentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/procedimentos')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f1a139d-d325-43af-9615-e9d7131bac83",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(3) .svg-inline--fa:nth-child(1) > path",
+      "targets": [
+        ["css=.grid:nth-child(3) .svg-inline--fa:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "f89f6f1d-28d7-4840-9b0c-af117524d406",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-cols-2",
+      "targets": [
+        ["css=.grid-cols-2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b62b6137-53f9-4300-b640-a174a1a98f57",
+      "comment": "",
+      "command": "type",
+      "target": "id=preco",
+      "targets": [
+        ["id=preco", "id"],
+        ["name=preco", "name"],
+        ["css=#preco", "css:finder"],
+        ["xpath=//input[@id='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "400"
+    }, {
+      "id": "74a196fb-563b-4873-a4f6-37a914902e1c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-4",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e79bc266-95ac-4b72-834d-9e6cf35838cb",
+    "name": "Delete procedimentos",
+    "commands": [{
+      "id": "9c436e36-1cbd-47cd-a65d-c880202fc66f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4dbe38a0-523d-4b3c-a2c7-b77679ac7556",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f974a16f-9e45-46d9-910a-765151f3e9a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(2)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Procedimentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/procedimentos')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec01beb5-63a3-4938-b72b-5d3a69183ba7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf65b6b8-98c0-4ab8-9bca-7b37ce7e589a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ce937f15-9118-47bc-a330-d092c7826e95",
+    "name": "Read procedimentos by filter",
+    "commands": [{
+      "id": "a16ba855-545f-4960-bd8e-e1a26f372bd8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fc01c28-ae6e-4ea8-9047-09ac49406d95",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91e41217-9328-4976-b22d-d1d45a989b20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(2)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Procedimentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/procedimentos')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fa7e906-396c-4de0-bfcc-3237b518d3bc",
+      "comment": "",
+      "command": "click",
+      "target": "id=30-45",
+      "targets": [
+        ["id=30-45", "id"],
+        ["css=#\\33 0-45", "css:finder"],
+        ["xpath=//input[@id='30-45']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6d35c89-c9c5-4b2d-a453-4eea0bc7643a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-rows-5:nth-child(2) > .row-span-1:nth-child(3)",
+      "targets": [
+        ["css=.grid-rows-5:nth-child(2) > .row-span-1:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div[2]/div/div[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "eae53fbc-a6f0-4f4a-86e5-77c7359942d9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a566f043-8a7d-41cc-8ba6-51552e363b31"]
+  }],
+  "urls": ["https://beleza-pura.onrender.com/"],
+  "plugins": []
+}
