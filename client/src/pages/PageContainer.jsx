@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../ui/Header";
 import Modal from "../ui/Modal";
 import { useUI } from "../context/UIProvider";
+import { EquipamentoProvider } from "../context/EquipamentoProvider";
 
 function PageContainer() {
   const { isOpenModal } = useUI();
@@ -12,7 +13,11 @@ function PageContainer() {
     >
       <Header />
       <Outlet />
-      {isOpenModal && <Modal />}
+      {isOpenModal && (
+        <EquipamentoProvider>
+          <Modal />
+        </EquipamentoProvider>
+      )}
     </div>
   );
 }

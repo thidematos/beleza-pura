@@ -42,8 +42,6 @@ function reducer(state, action) {
 function ProcedimentoProvider({ children }) {
   const [{ filters }, dispatch] = useReducer(reducer, initials);
 
-  console.log(filters);
-
   function toggleDuracaoFilter(intervalo) {
     dispatch({
       type: "filter/duracao",

@@ -2,13 +2,37 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+const validateCPF = require('./../utils/validateCPF');
 
 const userSchema = new mongoose.Schema({
+  nome: {
+    type: String,
+    maxLength: [256, 'O nome tem mais caracteres do que o permitido'],
+    required: [true, 'Um usuário precisa de um nome!'],
+  },
+  cpf: {
+    type: String,
+    unique: [true, 'CPF deve ser único!'],
+    required: [true, 'Um usuário precisa de um CPF'],
+    validate: {
+      validator: (value) => validateCPF(value),
+      message: ({ value }) => `${value} não é um CPF válido!`,
+    },
+  },
+  role: {
+    type: String,
+    enum: ['cabelereiro', 'secretario', 'cliente'],
+    required: [true, 'Um usuário precis de um tipo'],
+    default: 'cliente',
+  },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    unique: [true, 'Esse email já existe!'],
     validate: validator.isEmail,
+  },
+  celular: {
+    type: String,
+    required: [true, 'Um usuário precisa de um celular'],
   },
   password: {
     type: String,
@@ -28,16 +52,25 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords should match',
     },
   },
-
+  especialidades: {
+    type: [String],
+    enum: [
+      'cabelereiro geral',
+      'barbeiro',
+      'especialista corte',
+      'colorista',
+      'especialista de escova',
+      'especialista de alisamento',
+      'especialista em penteados',
+      'extensionista',
+      'designer de sombrancelha',
+    ],
+  },
   createdAt: {
     type: Date,
     default: Date.now,
     select: false,
   },
-
-  passwordResetToken: String,
-  passwordResetExpiration: String,
-  passwordChangedAt: Date,
 });
 
 userSchema.pre('save', async function (next) {
@@ -50,45 +83,17 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-userSchema.pre('save', async function (next) {
-  if (!this.isModified('password' || this.isNew)) return next();
-
-  this.passwordChangedAt = Date.now() - 1000;
+userSchema.pre('save', function (next) {
+  if (this.role === 'cliente') this.especialidades = undefined;
 
   next();
 });
-
-userSchema.methods.getPasswordResetToken = function () {
-  let token = crypto.randomBytes(32).toString('hex');
-
-  this.passwordResetToken = crypto
-    .createHash('sha256')
-    .update(token)
-    .digest('hex');
-
-  this.passwordResetExpiration = Date.now() + 10 * 60 * 1000;
-
-  return token;
-};
 
 userSchema.methods.correctPassword = async function (
   reqPassword,
   userPassword
 ) {
   return await bcrypt.compare(reqPassword, userPassword);
-};
-
-userSchema.methods.changedPasswordAfter = function (jwtTimeStamp) {
-  if (this.passwordChangedAt) {
-    const changedTimeStamp = parseInt(
-      this.passwordChangedAt.getTime() / 1000,
-      10
-    );
-
-    return jwtTimeStamp < changedTimeStamp;
-  }
-
-  return false;
 };
 
 const User = mongoose.model('User', userSchema);

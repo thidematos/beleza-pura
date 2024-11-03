@@ -18,7 +18,6 @@ export async function deleteProcedimento(procedimentoID) {
 }
 
 export async function updateProcedimento({ procedimentoID, data }) {
-  console.log(data);
   const res = await axios.patch(`/api/v1/procedimentos/${procedimentoID}`, {
     procedimento: data.procedimento,
     preco: Number(data.preco),

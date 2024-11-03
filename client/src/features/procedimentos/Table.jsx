@@ -7,6 +7,7 @@ import { useProcedimento } from "../../context/ProcedimentoProvider";
 import OptionsMenu from "../../ui/OptionsMenu";
 import { deleteProcedimento } from "../../services/procedimentos";
 import Update from "./Update";
+import Title from "../../ui/Title";
 
 function Table() {
   const { isPending, procedimentos } = useGetProcedimentos();
@@ -58,7 +59,7 @@ function Table() {
 
   return (
     <div className="col-span-6 flex flex-col items-center justify-start gap-6 py-10">
-      <h2 className="text-lg uppercase drop-shadow-sm">Procedimentos</h2>
+      <Title>Procedimentos</Title>
       <table className="grid w-full grid-cols-5 text-center">
         <thead className="col-span-5">
           <TableRow cols="grid grid-cols-5">
@@ -70,50 +71,58 @@ function Table() {
           </TableRow>
         </thead>
         <tbody className="col-span-5">
-          {filteredProcedimentosWithDuration
-            .sort((a, b) => b.preco - a.preco)
-            .map((procedimento) => (
-              <TableRow
-                key={procedimento._id}
-                cols="grid grid-cols-5 items-center"
-              >
-                <TableColumn>{procedimento.procedimento}</TableColumn>
-                <TableColumn>{formatPricing(procedimento.preco)}</TableColumn>
-                <TableColumn>
-                  <p className="space-x-2">
-                    <span>
-                      {Math.floor(procedimento.duracao / 60)}{" "}
-                      <span className="text-sm">hr.</span>
-                    </span>
-                    <span>
-                      {String(procedimento.duracao % 60).padStart(2, 0)}
-                      <span className="text-sm"> min.</span>
-                    </span>
-                  </p>
-                </TableColumn>
-                <TableColumn>
-                  <div className="flex flex-row flex-wrap items-center justify-start gap-1">
-                    {procedimento.produtos.map((produto) => (
-                      <p
-                        key={produto._id}
-                        className="flex select-none flex-row items-center justify-center rounded-full border border-gray-300 bg-green-700 px-2 py-1 text-[10px] text-gray-50 shadow"
-                      >
-                        {produto.produto}
-                      </p>
-                    ))}
-                  </div>
-                </TableColumn>
-                <TableColumn>
-                  <OptionsMenu
-                    dataID={procedimento._id}
-                    queryKey={"procedimentos"}
-                    dataTitle={"procedimento"}
-                    updateComponent={<Update procedimento={procedimento} />}
-                    mutateFunction={deleteProcedimento}
-                  />
-                </TableColumn>
-              </TableRow>
-            ))}
+          {filteredProcedimentosWithDuration.length === 0 ? (
+            <tr className="text-center">
+              <p className="centerX absolute py-10 italic text-red-700 drop-shadow-sm">
+                Não há resultados para a pesquisa
+              </p>
+            </tr>
+          ) : (
+            filteredProcedimentosWithDuration
+              .sort((a, b) => b.preco - a.preco)
+              .map((procedimento) => (
+                <TableRow
+                  key={procedimento._id}
+                  cols="grid grid-cols-5 items-center"
+                >
+                  <TableColumn>{procedimento.procedimento}</TableColumn>
+                  <TableColumn>{formatPricing(procedimento.preco)}</TableColumn>
+                  <TableColumn>
+                    <p className="space-x-2">
+                      <span>
+                        {Math.floor(procedimento.duracao / 60)}{" "}
+                        <span className="text-sm">hr.</span>
+                      </span>
+                      <span>
+                        {String(procedimento.duracao % 60).padStart(2, 0)}
+                        <span className="text-sm"> min.</span>
+                      </span>
+                    </p>
+                  </TableColumn>
+                  <TableColumn>
+                    <div className="flex flex-row flex-wrap items-center justify-start gap-1">
+                      {procedimento.produtos.map((produto) => (
+                        <p
+                          key={produto._id}
+                          className="flex select-none flex-row items-center justify-center rounded-full border border-gray-300 bg-green-700 px-2 py-1 text-[10px] text-gray-50 shadow"
+                        >
+                          {produto.produto}
+                        </p>
+                      ))}
+                    </div>
+                  </TableColumn>
+                  <TableColumn>
+                    <OptionsMenu
+                      dataID={procedimento._id}
+                      queryKey={"procedimentos"}
+                      dataTitle={"procedimento"}
+                      updateComponent={<Update procedimento={procedimento} />}
+                      mutateFunction={deleteProcedimento}
+                    />
+                  </TableColumn>
+                </TableRow>
+              ))
+          )}
         </tbody>
       </table>
     </div>

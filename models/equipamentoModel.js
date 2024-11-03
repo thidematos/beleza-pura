@@ -3,21 +3,6 @@ const mongoose = require('mongoose');
 const equipamentoSchema = new mongoose.Schema({
   equipamento: {
     type: String,
-    enum: [
-      'Pente',
-      'Tesoura de corte',
-      'Tesoura de desbaste',
-      'Secador de cabelo',
-      'Máquina de cortar cabelo',
-      'Navalha',
-      'Lâmina',
-      'Prancha alisadora',
-      'Modelador de cachos',
-      'Escova',
-      'Touca térmica',
-      'Toalha',
-      'Bacia',
-    ],
     required: [true, 'Um equipamento precisa de um tipo!'],
   },
   preco: {
