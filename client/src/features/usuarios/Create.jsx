@@ -13,7 +13,7 @@ function Create() {
           toggleModal({
             status: true,
             component: <CreateModal />,
-            width: "min-w-[45%]",
+            width: "w-[45%]",
           })
         }
       >

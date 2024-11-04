@@ -8,6 +8,9 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import Equipamentos from "./pages/Equipamentos";
 import Colaboradores from "./pages/Usuarios";
+import Login from "./pages/Login";
+import ProtectRoute from "./ui/ProtectRoute";
+import Agendamentos from "./pages/Agendamentos";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,10 +41,18 @@ function App() {
           <ReactQueryDevtools initialIsOpen={false} />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<PageContainer />}>
+              <Route path="/" element={<Login />} />
+              <Route
+                path="/overview"
+                element={
+                  <ProtectRoute>
+                    <PageContainer />
+                  </ProtectRoute>
+                }
+              >
                 <Route path="usuarios" element={<Colaboradores />} />
                 <Route path="procedimentos" element={<Procedimentos />} />
-                <Route path="agendamentos" element={<p>oi</p>} />
+                <Route path="agendamentos" element={<Agendamentos />} />
                 <Route path="contabilidade" element={<p>oi</p>} />
                 <Route path="produtos" element={<Produtos />} />
                 <Route path="equipamentos" element={<Equipamentos />} />

@@ -8,6 +8,8 @@ const produtoRouter = require('./routers/produtoRouter');
 const procedimentoRouter = require('./routers/procedimentoRouter');
 const equipamentoRouter = require('./routers/equipamentoRouter');
 const userRouter = require('./routers/userRouter');
+const authRouter = require('./routers/authRouter');
+const agendamentoRouter = require('./routers/agendamentoRouter');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -34,6 +36,8 @@ app.use('/api/v1/produtos', produtoRouter);
 app.use('/api/v1/procedimentos', procedimentoRouter);
 app.use('/api/v1/equipamentos', equipamentoRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/agendamentos', agendamentoRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {

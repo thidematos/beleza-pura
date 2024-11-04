@@ -3,6 +3,7 @@ import Header from "../ui/Header";
 import Modal from "../ui/Modal";
 import { useUI } from "../context/UIProvider";
 import { EquipamentoProvider } from "../context/EquipamentoProvider";
+import { AgendamentoProvider } from "@/context/AgendamentoProvider";
 
 function PageContainer() {
   const { isOpenModal } = useUI();
@@ -15,7 +16,9 @@ function PageContainer() {
       <Outlet />
       {isOpenModal && (
         <EquipamentoProvider>
-          <Modal />
+          <AgendamentoProvider>
+            <Modal />
+          </AgendamentoProvider>
         </EquipamentoProvider>
       )}
     </div>

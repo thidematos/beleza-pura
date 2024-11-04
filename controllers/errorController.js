@@ -50,14 +50,14 @@ const handleValidationDb = (err) => {
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
 
-  console.log(err);
-
   err.status = err.status || 'error';
+
+  console.log(err);
 
   if (process.env.NODE_ENV === 'development') sendErrorDev(err, res);
 
   if (process.env.NODE_ENV === 'production') {
-    let error = { ...err };
+    let error = Object.assign(err);
 
     if (err.name === 'CastType') error = handleCastErrorDb(err);
 

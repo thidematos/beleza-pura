@@ -3,8 +3,6 @@ const catchAsync = require('../utils/catchAsync');
 const User = require('./../models/userModel');
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
-const SendMail = require('./../utils/email');
-const crypto = require('crypto');
 
 const signToken = (id) => {
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
@@ -85,11 +83,17 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   if (!currentUser) return next(new AppError('Usuário não encontrado!', 401));
 
-  if (currentUser.changedPasswordAfter(decoded.iat))
-    return next(new AppError('Usuário não está autenticado.', 401));
-
   req.user = currentUser;
   next();
+});
+
+exports.validate = catchAsync(async (req, res, next) => {
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user: req.user,
+    },
+  });
 });
 
 exports.restrictTo = (...role) => {
@@ -102,51 +106,3 @@ exports.restrictTo = (...role) => {
     next();
   };
 };
-
-exports.resetPassword = catchAsync(async (req, res, next) => {
-  const token = req.params.resetToken;
-  const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
-  const user = await User.findOne({
-    passwordResetToken: hashedToken,
-    passwordResetExpiration: { $gt: Date.now() },
-  });
-
-  if (!user)
-    return next(
-      new AppError(
-        'Atualização de senha falhou: token inválido. Por favor, tente novamente.',
-        400
-      )
-    );
-
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
-  user.passwordResetToken = undefined;
-  user.passwordResetExpiration = undefined;
-
-  await user.save();
-
-  createSendCookie(user, 200, res);
-});
-
-exports.forgotPassword = catchAsync(async (req, res, next) => {
-  const user = await User.findOne({ email: req.body.email });
-
-  if (!user) return next(new AppError('Usuário não encontrado', 404));
-
-  const resetToken = user.getPasswordResetToken();
-
-  await user.save({
-    validateBeforeSave: false,
-  });
-
-  await new SendMail().sendDummyMail({
-    example: 'send password reset',
-    resetToken,
-  });
-
-  res.status(200).json({
-    status: 'success',
-    message: 'Reset token enviado',
-  });
-});
