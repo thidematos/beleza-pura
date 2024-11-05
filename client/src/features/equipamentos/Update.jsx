@@ -10,8 +10,8 @@ function Update({ equipamento }) {
         isUpdate={{
           id: equipamento._id,
           equipamento: equipamento.equipamento,
-          preco: equipamento.preco,
-          quantidade: equipamento.quantidade,
+          voltagem: equipamento.voltagem,
+          dataAquisicao: equipamento.dataAquisicao,
           marca: equipamento.marca,
         }}
       />

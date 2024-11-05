@@ -24,9 +24,9 @@ function UpdateProduto({ produtoID }) {
           mutate={updateProdutoFn}
           useValues={{
             produto: currentProduto.produto,
-            qtd: currentProduto.quantidade,
-            preco: currentProduto.preco,
-            validade: format(currentProduto.validade, "yyyy-MM-dd"),
+            marca: currentProduto.marca,
+            descricao: currentProduto.descricao,
+            pesoLiquido: currentProduto.pesoLiquido,
           }}
         />
       )}

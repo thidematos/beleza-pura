@@ -13,23 +13,13 @@ export async function deleteProduto(id) {
 }
 
 export async function updateProduto({ id, data }) {
-  const res = await axios.patch(`/api/v1/produtos/${id}`, {
-    produto: data.produto,
-    quantidade: data.qtd,
-    preco: Number(data.preco),
-    validade: new Date(data.validade),
-  });
+  const res = await axios.patch(`/api/v1/produtos/${id}`, data);
 
   return res.data.data.produto;
 }
 
 export async function createProduto(data) {
-  const res = await axios.post("/api/v1/produtos", {
-    produto: data.produto,
-    quantidade: data.qtd,
-    preco: Number(data.preco),
-    validade: new Date(data.validade),
-  });
+  const res = await axios.post("/api/v1/produtos", data);
 
   return res.data.data.produto;
 }

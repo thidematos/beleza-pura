@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import Loader from "../../ui/Loader";
 import { useUpdateEquipamento } from "./useUpdateEquipamento";
 import { firstLetterUppercase } from "../../utils/firstLetterUppercase";
+import { format } from "date-fns";
 
 const labelStyle = `w-[50%] uppercase`;
 
@@ -18,10 +19,14 @@ function Form({ isUpdate = false }) {
   const [equipamento, setEquipamento] = useState(() =>
     isUpdate ? isUpdate.equipamento : "",
   );
-  const [quantidade, setQuantidade] = useState(() =>
-    isUpdate ? isUpdate.quantidade : 0,
+  const [voltagem, setVoltagem] = useState(() =>
+    isUpdate ? isUpdate.voltagem : "",
   );
-  const [preco, setPreco] = useState(() => (isUpdate ? isUpdate.preco : 0.0));
+  const [dataAquisicao, setDataAquisicao] = useState(() =>
+    isUpdate
+      ? format(isUpdate.dataAquisicao, "yyyy-MM-dd")
+      : format(new Date(), "yyyy-MM-dd"),
+  );
   const [marca, setMarca] = useState(() => (isUpdate ? isUpdate.marca : ""));
 
   const [isOutro, setIsOutro] = useState(false);
@@ -38,15 +43,15 @@ function Form({ isUpdate = false }) {
         if (isUpdate) {
           return updateEquipamentoFn({
             equipamento,
-            quantidade,
-            preco,
+            voltagem,
+            dataAquisicao,
             marca,
           });
         } else {
           return createEquipamentoFn({
             equipamento,
-            quantidade,
-            preco,
+            voltagem,
+            dataAquisicao,
             marca,
           });
         }
@@ -104,37 +109,6 @@ function Form({ isUpdate = false }) {
             </div>
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className={labelStyle} htmlFor="quantidade">
-              Quantidade
-            </label>
-            <div className="flex w-[50%] flex-row items-center justify-center gap-3">
-              <span className="text-gray-500">Un.</span>
-              <input
-                type="number"
-                id="quantidade"
-                value={quantidade}
-                onChange={(e) => setQuantidade(e.target.value)}
-                className="w-[35%] rounded border border-gray-300 py-2 text-center text-sm shadow outline-none"
-              />
-            </div>
-          </div>
-          <div className="flex flex-row items-center justify-between">
-            <label className={labelStyle} htmlFor="preco">
-              Preço
-            </label>
-            <div className="flex w-[50%] flex-row items-center justify-center gap-3">
-              <span className="text-gray-500">R$ </span>
-              <input
-                type="number"
-                id="preco"
-                value={preco}
-                step={0.01}
-                onChange={(e) => setPreco(e.target.value)}
-                className="w-[35%] rounded border border-gray-300 py-2 text-center text-sm shadow outline-none"
-              />
-            </div>
-          </div>
-          <div className="flex flex-row items-center justify-between">
             <label className={labelStyle} htmlFor="marca">
               Marca
             </label>
@@ -149,6 +123,39 @@ function Form({ isUpdate = false }) {
               />
             </div>
           </div>
+          <div className="flex flex-row items-center justify-between">
+            <label className={labelStyle} htmlFor="voltagem">
+              Voltagem
+            </label>
+            <div className="flex w-[50%] flex-row items-center justify-center gap-3">
+              <input
+                type="text"
+                id="voltagem"
+                placeholder="110v"
+                value={voltagem}
+                onChange={(e) => setVoltagem(e.target.value)}
+                className="w-[35%] rounded border border-gray-300 py-2 text-center text-sm shadow outline-none"
+              />
+            </div>
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <label className={labelStyle} htmlFor="date">
+              Data de aquisição
+            </label>
+            <div className="flex w-[50%] flex-row items-center justify-center gap-3">
+              <input
+                type="date"
+                id="date"
+                value={dataAquisicao}
+                onChange={(e) => {
+                  console.log(new Date(e.target.value));
+                  setDataAquisicao(e.target.value);
+                }}
+                className="w-full rounded border border-gray-300 py-2 text-center text-sm shadow outline-none"
+              />
+            </div>
+          </div>
+
           <Button type="submit" className="my-4 w-[50%] self-center">
             Cadastrar
           </Button>

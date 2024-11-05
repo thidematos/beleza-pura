@@ -5,17 +5,17 @@ const produtoSchema = new mongoose.Schema({
     type: String,
     required: [true, 'É preciso indicar o nome do produto!'],
   },
-  preco: {
-    type: Number,
-    required: [true, 'Um produto precisa de um preço!'],
+  descricao: {
+    type: String,
+    required: [true, 'Um produto precisa de uma descrição!'],
   },
-  quantidade: {
-    type: Number,
-    default: 0,
+  marca: {
+    type: String,
+    required: [true, 'Um produto precisa de uma marca!'],
   },
-  validade: {
-    type: Date,
-    required: [true, 'É preciso indicar a data de validade do produto!'],
+  pesoLiquido: {
+    type: String,
+    required: [true, 'Um produto precisa de um peso líquido!'],
   },
 });
 

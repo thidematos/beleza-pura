@@ -9,8 +9,8 @@ export async function getAllEquipamentos() {
 export async function createEquipamento(data) {
   const res = await axios.post(`/api/v1/equipamentos`, {
     equipamento: data.equipamento,
-    preco: Number(data.preco),
-    quantidade: Number(data.quantidade),
+    voltagem: data.voltagem,
+    dataAquisicao: new Date(data.dataAquisicao),
     marca: data.marca,
   });
 
@@ -26,8 +26,8 @@ export async function deleteEquipamento(id) {
 export async function updateEquipamento({ id, data }) {
   const res = await axios.patch(`/api/v1/equipamentos/${id}`, {
     equipamento: data.equipamento,
-    preco: data.preco,
-    quantidade: data.quantidade,
+    voltagem: data.voltagem,
+    dataAquisicao: new Date(data.dataAquisicao),
     marca: data.marca,
   });
 

@@ -25,25 +25,24 @@ function ProdutoForm({ mutate, useValues = false }) {
         }}
       />
       <FormInput
-        label={"Quantidade"}
-        id={"qtd"}
-        type={"number"}
-        register={{ register, api: { min: 0, required: true } }}
+        label={"Descrição"}
+        id={"descricao"}
+        type={"text"}
+        register={{ register }}
       />
       <FormInput
-        label={"Preço"}
-        id={"preco"}
-        type={"number"}
-        register={{ register, api: { min: 0, required: true } }}
+        label={"Marca"}
+        id={"marca"}
+        type={"text"}
+        register={{ register }}
       />
       <FormInput
-        label={"Validade"}
-        id={"validade"}
-        type={"date"}
-        inputClass={
-          "bg-transparent outline-none p-2 border border-gray-300 rounded"
-        }
-        register={{ register, api: { required: true } }}
+        label={"Peso Líquido"}
+        id={"pesoLiquido"}
+        placeholder={"150ml"}
+        type={"text"}
+        inputClass={" outline-none p-2 border border-gray-300 rounded"}
+        register={{ register }}
       />
       <Button className="mt-6" type="submit">
         {useValues ? "Atualizar" : "Cadastrar"}

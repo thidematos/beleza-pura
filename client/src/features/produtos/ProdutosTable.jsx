@@ -25,9 +25,9 @@ function ProdutosTable() {
         <thead className="col-span-6 w-full">
           <TableRow>
             <TableColumn isHead={true}>Produto</TableColumn>
-            <TableColumn isHead={true}>Quantidade</TableColumn>
-            <TableColumn isHead={true}>Preço</TableColumn>
-            <TableColumn isHead={true}>Validade</TableColumn>
+            <TableColumn isHead={true}>Marca</TableColumn>
+            <TableColumn isHead={true}>Peso Líquido</TableColumn>
+            <TableColumn isHead={true}>Descrição</TableColumn>
             <TableColumn isHead={true}>Opções</TableColumn>
           </TableRow>
         </thead>
@@ -45,13 +45,9 @@ function ProdutosTable() {
             .map((produto) => (
               <TableRow key={produto._id}>
                 <TableColumn>{produto.produto}</TableColumn>
-                <TableColumn>{produto.quantidade}</TableColumn>
-                <TableColumn>{formatPricing(produto.preco)}</TableColumn>
-                <TableColumn>
-                  {format(produto.validade, "dd / MMM / yyyy", {
-                    locale: ptBR,
-                  })}
-                </TableColumn>
+                <TableColumn>{produto.marca}</TableColumn>
+                <TableColumn>{produto.pesoLiquido}</TableColumn>
+                <TableColumn>{produto.descricao}</TableColumn>
                 <TableColumn>
                   <OptionsMenu
                     dataID={produto._id}

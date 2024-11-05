@@ -32,14 +32,7 @@ exports.updateProduto = catchAsync(async (req, res, next) => {
 });
 
 exports.createProduto = catchAsync(async (req, res, next) => {
-  const { produto, quantidade = 0, preco, validade } = req.body;
-
-  const newProduto = await Produto.create({
-    produto,
-    quantidade,
-    validade,
-    preco,
-  });
+  const newProduto = await Produto.create(req.body);
 
   res.status(201).json({
     status: 'success',

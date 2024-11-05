@@ -8,6 +8,7 @@ import formatPricing from "./../../utils/formatPricing";
 import { useEquipamento } from "../../context/EquipamentoProvider";
 import { deleteEquipamento } from "../../services/equipamentos";
 import Update from "./Update";
+import { format } from "date-fns";
 
 function Table() {
   const { isGetting, equipamentos } = useGetEquipamentos();
@@ -45,10 +46,9 @@ function Table() {
         <thead className="">
           <TableRow cols={"grid-cols-5"}>
             <TableColumn isHead>Equipamento</TableColumn>
-            <TableColumn isHead>Quantidade</TableColumn>
-            <TableColumn isHead>Preço</TableColumn>
-
             <TableColumn isHead>Marca</TableColumn>
+            <TableColumn isHead>Voltagem</TableColumn>
+            <TableColumn isHead>Data de Aquisição</TableColumn>
             <TableColumn isHead>Opções</TableColumn>
           </TableRow>
         </thead>
@@ -63,10 +63,13 @@ function Table() {
             equipamentoFiltered2.map((equipamento) => (
               <TableRow key={equipamento._id} cols="grid-cols-5">
                 <TableColumn>{equipamento.equipamento}</TableColumn>
-
-                <TableColumn>{equipamento.quantidade} un.</TableColumn>
-                <TableColumn>{formatPricing(equipamento.preco)}</TableColumn>
                 <TableColumn>{equipamento.marca}</TableColumn>
+                <TableColumn>{equipamento.voltagem}</TableColumn>
+                <TableColumn>
+                  {equipamento.dataAquisicao &&
+                    format(equipamento.dataAquisicao, "dd/MM/yyyy")}
+                </TableColumn>
+
                 <TableColumn>
                   <OptionsMenu
                     queryKey={"equipamentos"}
