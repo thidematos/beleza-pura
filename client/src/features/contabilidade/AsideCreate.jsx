@@ -1,25 +1,28 @@
 import { useUI } from "@/context/UIProvider";
-import Button from "@/ui/Button";
+import Button from "./../../ui/Button";
 import ModalContainer from "./ModalContainer";
-import { createPortal } from "react-dom";
+import Form from "./Form";
 
 function AsideCreate() {
   const { toggleModal } = useUI();
 
   return (
-    <div className="col-span-2 flex flex-row justify-center">
+    <div className="col-span-2 flex flex-col items-center">
       <Button
         className="fixed bottom-[10%]"
-        padding="py-4 px-10"
         onClick={() =>
           toggleModal({
             status: true,
-            component: <ModalContainer />,
-            width: "w-[60%]",
+            component: (
+              <ModalContainer>
+                <Form />
+              </ModalContainer>
+            ),
+            width: "",
           })
         }
       >
-        Agendar
+        Criar registro
       </Button>
     </div>
   );

@@ -24,6 +24,29 @@ exports.updateAgendamento = catchAsync(async (req, res, next) => {
   await agendamentoHandlers.updateDate(req, res, req.params.agendamentoID);
 });
 
+exports.confirmSchedule = catchAsync(async (req, res, next) => {
+  console.log('agendamentoID', req.params.agendamentoID);
+
+  console.log('status', req.body.status);
+
+  const updatedAgendamento = await Agendamento.findByIdAndUpdate(
+    req.params.agendamentoID,
+    {
+      status: req.body.status,
+    },
+    {
+      new: true,
+    }
+  );
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      agendamento: updatedAgendamento,
+    },
+  });
+});
+
 exports.deleteAgendamento = catchAsync(async (req, res, next) => {
   const agendamento = await Agendamento.findById(req.params.agendamentoID);
 

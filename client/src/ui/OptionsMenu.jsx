@@ -9,6 +9,7 @@ function OptionsMenu({
   dataTitle,
   updateComponent,
   mutateFunction,
+  widthUpdate = "w-[40%]",
 }) {
   const { toggleModal } = useUI();
 
@@ -21,7 +22,7 @@ function OptionsMenu({
           toggleModal({
             status: true,
             component: updateComponent,
-            width: "w-[40%]",
+            width: widthUpdate,
           });
         }}
       />

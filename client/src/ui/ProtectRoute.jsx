@@ -1,15 +1,15 @@
 import { useUser } from "@/features/login/useUser";
 import Loader from "./Loader";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { useEffect } from "react";
 
 function ProtectRoute({ children }) {
-  const { user, isValidating } = useUser();
+  const { user, isValidating, error } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user && !isValidating) navigate("/");
-  }, [isValidating, user, navigate]);
+    if (error && !isValidating) navigate("/");
+  }, [isValidating, error, navigate]);
 
   if (isValidating)
     return (
@@ -18,7 +18,7 @@ function ProtectRoute({ children }) {
       </div>
     );
 
-  return children;
+  if (!error && !isValidating) return children;
 }
 
 export default ProtectRoute;

@@ -19,13 +19,36 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useGetAgendamentos } from "./useGetAgendamentos.js";
 import toast from "react-hot-toast";
 import { useCreateAgendamento } from "./useCreateAgendamento";
+import { useUpdateAgendamento } from "./useUpdateAgendamento";
 
-function Form() {
+function Form({ isUpdate = false }) {
   const { isValidating, user } = useUser();
-  const { formMethods, finalSelectedProcedimentos, finalSelectedDate } =
-    useAgendamento();
+  const {
+    formMethods,
+    finalSelectedProcedimentos,
+    finalSelectedDate,
+    setDefaultValues,
+    defaultValues,
+  } = useAgendamento();
+
+  const { isGetting, usuarios } = useGetUsers();
+
+  const { isUpdating, updateAgendamentoApi } = useUpdateAgendamento(
+    isUpdate?._id,
+  );
 
   const { isCreating, createAgendamentoFn } = useCreateAgendamento();
+
+  useEffect(() => {
+    if (!isUpdate) return;
+
+    if (defaultValues) return;
+
+    if (isGetting) return;
+
+    setDefaultValues({ key: "nome", value: isUpdate.nome });
+    setDefaultValues({ key: "cabelereiro", value: isUpdate.cabelereiro });
+  }, [isUpdate, setDefaultValues, defaultValues, isGetting]);
 
   function getFormData(data) {
     console.log(data);
@@ -33,6 +56,14 @@ function Form() {
       return toast.error("Selecione um procedimento!");
 
     if (!finalSelectedDate) return toast.error("Selecione uma data e hora!");
+
+    if (isUpdate)
+      return updateAgendamentoApi({
+        nome: data.nome,
+        procedimentos: finalSelectedProcedimentos,
+        quando: finalSelectedDate,
+        cabelereiro: data.cabelereiro,
+      });
 
     createAgendamentoFn({
       nome: data.nome,
@@ -50,15 +81,19 @@ function Form() {
           <div className="col-span-1 flex flex-col items-start justify-center gap-8">
             <div className="flex w-full flex-col items-start justify-center gap-1">
               <Label>Nome</Label>
-              {user.role === "cliente" ? <CurrentName /> : <SelectUsers />}
+              {user.role === "cliente" ? (
+                <CurrentName />
+              ) : (
+                <SelectUsers isUpdate={isUpdate} />
+              )}
             </div>
             <div className="flex w-full flex-col items-start justify-center gap-1">
               <Label>Procedimentos</Label>
-              <SelectProcedimentos />
+              <SelectProcedimentos isUpdate={isUpdate} />
             </div>
             <div className="flex w-full flex-col items-start justify-center gap-1">
               <Label>Profissional de preferência</Label>
-              <SelectCabelereiro />
+              <SelectCabelereiro isUpdate={isUpdate} />
             </div>
           </div>
           <div className="col-span-1">
@@ -139,7 +174,7 @@ function Schedule() {
   );
 }
 
-function SelectCabelereiro() {
+function SelectCabelereiro({ isUpdate }) {
   const { isGetting, usuarios } = useGetUsers();
   const { isValidating, user: currentUser } = useUser();
   const { formMethods } = useAgendamento();
@@ -148,19 +183,22 @@ function SelectCabelereiro() {
     return <FontAwesomeIcon icon={faSpinner} className="animate-spin" />;
 
   const cabelereirosUsers = usuarios?.filter((user) => {
-    if (user._id === currentUser._id) return false;
-
     return user.role === "cabelereiro";
   });
 
   return (
     <select
       className="flex w-full flex-col items-start justify-center gap-1 rounded border border-gray-300 px-2 py-1 text-sm shadow outline-none"
+      defaultValue={
+        isUpdate
+          ? isUpdate.cabelereiro
+            ? isUpdate.cabelereiro
+            : "qualquer"
+          : "qualquer"
+      }
       {...formMethods.register("cabelereiro")}
     >
-      <option defaultChecked value={"qualquer"}>
-        Sem preferência
-      </option>
+      <option value={"qualquer"}>Sem preferência</option>
       {cabelereirosUsers.map((cabelereiro) => (
         <option value={cabelereiro._id} key={cabelereiro._id}>
           {cabelereiro.nome}
@@ -170,13 +208,31 @@ function SelectCabelereiro() {
   );
 }
 
-function SelectProcedimentos() {
+function SelectProcedimentos({ isUpdate }) {
   const { isPending, procedimentos } = useGetProcedimentos();
   const { handleChangeOnSelectProcedimento } = useAgendamento();
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
-  const [selectedProcedimentos, setSelectedProcedimentos] = useState([]);
-  const [toSelectProcedimentos, setToSelectProcedimentos] = useState([]);
+  const [selectedProcedimentos, setSelectedProcedimentos] = useState(() => {
+    if (!isUpdate) return [];
+
+    return isUpdate.procedimentos.map((id) =>
+      procedimentos.find((item) => item._id === id),
+    );
+  });
+  const [toSelectProcedimentos, setToSelectProcedimentos] = useState(() => {
+    if (!isUpdate) return [];
+
+    return procedimentos.filter((procedimento) => {
+      let status = true;
+
+      isUpdate.procedimentos.forEach((id) => {
+        status = id === procedimento._id ? false : true;
+      });
+
+      return status;
+    });
+  });
 
   useEffect(() => {
     handleChangeOnSelectProcedimento(selectedProcedimentos);
@@ -268,7 +324,7 @@ function CurrentName() {
   );
 }
 
-function SelectUsers() {
+function SelectUsers({ isUpdate }) {
   const { isGetting, usuarios } = useGetUsers();
   const { isValidating, user: currentUser } = useUser();
   const { formMethods } = useAgendamento();
@@ -281,6 +337,7 @@ function SelectUsers() {
   return (
     <select
       className="flex w-full flex-col items-start justify-center gap-1 rounded border border-gray-300 px-2 py-1 text-sm shadow outline-none"
+      defaultValue={isUpdate ? isUpdate.nome : false}
       {...formMethods.register("nome", {
         onChange: (e) => console.log(e.target.value),
       })}

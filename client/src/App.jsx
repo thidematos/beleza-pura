@@ -11,6 +11,7 @@ import Colaboradores from "./pages/Usuarios";
 import Login from "./pages/Login";
 import ProtectRoute from "./ui/ProtectRoute";
 import Agendamentos from "./pages/Agendamentos";
+import Contabilidade from "./pages/Contabilidade";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -53,7 +54,7 @@ function App() {
                 <Route path="usuarios" element={<Colaboradores />} />
                 <Route path="procedimentos" element={<Procedimentos />} />
                 <Route path="agendamentos" element={<Agendamentos />} />
-                <Route path="contabilidade" element={<p>oi</p>} />
+                <Route path="contabilidade" element={<Contabilidade />} />
                 <Route path="produtos" element={<Produtos />} />
                 <Route path="equipamentos" element={<Equipamentos />} />
               </Route>

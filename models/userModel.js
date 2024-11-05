@@ -27,7 +27,6 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: [true, 'Esse email já existe!'],
     validate: validator.isEmail,
   },
   celular: {

@@ -13,4 +13,6 @@ router
   .delete(agendamentoController.deleteAgendamento)
   .patch(agendamentoController.updateAgendamento);
 
+router.patch('/confirm/:agendamentoID', agendamentoController.confirmSchedule);
+
 module.exports = router;
