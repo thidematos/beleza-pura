@@ -68,18 +68,18 @@ function Filters() {
             <div className="col-span-1 grid grid-flow-row items-center gap-2">
               {procedimentosLabel.map((label) => (
                 <input
-                  key={label._id}
-                  value={label._id}
+                  key={label?._id}
+                  value={label?._id}
                   type="checkbox"
                   className="row-span-1"
-                  onChange={() => toggleFilter(label._id, "procedimentos")}
+                  onChange={() => toggleFilter(label?._id, "procedimentos")}
                 />
               ))}
             </div>
             <div className="col-span-1 grid grid-flow-row items-center gap-2 text-xs">
               {procedimentosLabel.map((label) => (
-                <label key={label._id} className="row-span-1 drop-shadow-sm">
-                  {label.procedimento}
+                <label key={label?._id} className="row-span-1 drop-shadow-sm">
+                  {label?.procedimento}
                 </label>
               ))}
             </div>
@@ -96,18 +96,18 @@ function Filters() {
             <div className="col-span-1 grid grid-flow-row items-center gap-2">
               {profissionaisLabel.map((label) => (
                 <input
-                  key={label._id}
-                  value={label._id}
+                  key={label?._id}
+                  value={label?._id}
                   type="checkbox"
                   className="row-span-1"
-                  onChange={() => toggleFilter(label._id, "profissionais")}
+                  onChange={() => toggleFilter(label?._id, "profissionais")}
                 />
               ))}
             </div>
             <div className="col-span-1 grid grid-flow-row items-center gap-2 text-xs">
               {profissionaisLabel.map((label) => (
-                <label key={label._id} className="row-span-1 drop-shadow-sm">
-                  {label.nome}
+                <label key={label?._id} className="row-span-1 drop-shadow-sm">
+                  {label?.nome}
                 </label>
               ))}
             </div>
