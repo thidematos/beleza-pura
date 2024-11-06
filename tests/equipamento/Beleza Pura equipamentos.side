@@ -1,0 +1,337 @@
+{
+  "id": "f409c9ff-e885-4c0e-90a1-156d498f6bb1",
+  "version": "2.0",
+  "name": "Beleza Pura equipamentos",
+  "url": "https://beleza-pura.onrender.com",
+  "tests": [{
+    "id": "548f074a-72c8-4804-bfc5-745ddf0f4f02",
+    "name": "Read equipamentos",
+    "commands": [{
+      "id": "cf639455-07e2-4c91-8781-1fa68f0f05e6",
+      "comment": "",
+      "command": "open",
+      "target": "/overview/usuarios",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea73042b-b735-4e19-99e3-11ff745e03ad",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "be77c151-17d3-40be-99e9-d740691099a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Equipamentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/equipamentos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "beab25af-02c6-4892-b20b-eba9c68ca65c",
+    "name": "Create equipamentos",
+    "commands": [{
+      "id": "7ca09188-aeab-45b4-8456-cbc0fa28ea52",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2bc2e14-c7b8-42fe-85a7-8a8f8bb56070",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b24acb68-334a-4391-bb17-b379f387961c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af7653b0-94e4-47e7-8f1a-fa6bc636967c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Equipamentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/equipamentos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ccb68f4-4a85-4238-9bfc-19cc39477a53",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fixed",
+      "targets": [
+        ["css=.fixed", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4e5d3ae-258c-4cd1-b2d9-65f4f44481be",
+      "comment": "",
+      "command": "select",
+      "target": "id=equipamento",
+      "targets": [],
+      "value": "label=Prancha alisadora"
+    }, {
+      "id": "dcd6d0b2-dd1f-4ce2-a31b-414daadb898d",
+      "comment": "",
+      "command": "type",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//input[@id='marca']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Gama Italy"
+    }, {
+      "id": "2dbe184c-970c-44ad-b0d4-334190515153",
+      "comment": "",
+      "command": "type",
+      "target": "id=voltagem",
+      "targets": [
+        ["id=voltagem", "id"],
+        ["css=#voltagem", "css:finder"],
+        ["xpath=//input[@id='voltagem']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "110/220"
+    }, {
+      "id": "8a163494-a8ec-49cd-ac73-8b2d1b393322",
+      "comment": "",
+      "command": "click",
+      "target": "id=date",
+      "targets": [
+        ["id=date", "id"],
+        ["css=#date", "css:finder"],
+        ["xpath=//input[@id='date']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26a19dc6-f500-459c-b620-c2a3d9b0125b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.my-4",
+      "targets": [
+        ["css=.my-4", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f38502ad-dfaf-40e8-8330-46e037305b39",
+    "name": "Delete equipamentos",
+    "commands": [{
+      "id": "f8bb30fd-c049-4f83-99f2-1c0a4fb4a377",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d3e6a3d-3a31-4bc2-9d6a-660a20606a68",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a27e145-f8a6-4201-baca-ee62ce44a378",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2528e0fe-2a14-4e45-8cc7-e255aa1e4543",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Equipamentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/equipamentos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "164aca64-42d7-4210-b809-804c075745d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(6) .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(6) .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d3b9c7c-58bd-447d-87fe-1526331199db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d70ae081-fbc3-48ba-bd7a-427d9eff241f",
+    "name": "Update equipamentos",
+    "commands": [{
+      "id": "7ad66de8-4295-49dc-bd62-3b9364f57431",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5e178dc-d50e-40c2-8c1e-3f7c2236f351",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b278f6d-fdb2-47d6-95bb-ea0d360525d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55bb6cb7-39cc-453e-a1b2-035961209426",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(5)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Equipamentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/equipamentos')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75075fb0-3fe1-4b04-9e9d-ea6ef04e1d2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(5) .svg-inline--fa:nth-child(1) > path",
+      "targets": [
+        ["css=.grid:nth-child(5) .svg-inline--fa:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d1498ec-c07b-4ec1-b8df-e0a05c484f73",
+      "comment": "",
+      "command": "click",
+      "target": "css=.justify-between:nth-child(2)",
+      "targets": [
+        ["css=.justify-between:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af7a5365-3157-4a15-858b-3f0c493f9137",
+      "comment": "",
+      "command": "type",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//input[@id='marca']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Taiff"
+    }, {
+      "id": "b03e66ce-e9e5-4b46-84d7-c7d4f22c5218",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex-row:nth-child(3) > .flex",
+      "targets": [
+        ["css=.flex-row:nth-child(3) > .flex", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65b17808-c40d-43b0-9bce-44e80c5effe7",
+      "comment": "",
+      "command": "type",
+      "target": "id=voltagem",
+      "targets": [
+        ["id=voltagem", "id"],
+        ["css=#voltagem", "css:finder"],
+        ["xpath=//input[@id='voltagem']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "220"
+    }, {
+      "id": "121e6ed2-2804-41ef-a0f9-0e019ed4e54c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.my-4",
+      "targets": [
+        ["css=.my-4", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3367172f-0c62-4c9f-a35e-2904f70b429a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://beleza-pura.onrender.com/"],
+  "plugins": []
+}
