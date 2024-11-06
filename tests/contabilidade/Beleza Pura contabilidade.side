@@ -1,0 +1,347 @@
+{
+  "id": "c5e861f7-cd25-49cc-98d6-75ae90a28dcd",
+  "version": "2.0",
+  "name": "Beleza Pura contabilidade",
+  "url": "https://beleza-pura.onrender.com",
+  "tests": [{
+    "id": "ac03eb9f-e41d-4958-92a1-0796f96de58e",
+    "name": "Read contabilidade",
+    "commands": [{
+      "id": "0f731374-c434-4cd0-ad63-71ac2976897c",
+      "comment": "",
+      "command": "open",
+      "target": "/overview/usuarios",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "449f5c29-58be-427f-a672-c4992583f727",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fecf9dc3-ab3a-439b-b297-df022c8b94fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(3)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contabilidade')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/contabilidade')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "bb16b6ae-91dc-4d5e-9c6d-6d1e40672adc",
+    "name": "Create contabilidade",
+    "commands": [{
+      "id": "db313237-496e-434e-8e75-09f0e1126f16",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b98f82c8-02f3-40f5-8d37-23159e3d60dd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a62cc50-ace3-4566-91d1-e1d24a539e20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "120f3f4c-08b2-4743-9dd2-5d92cbce5c64",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(3)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contabilidade')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/contabilidade')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e046e7e-e8b5-467a-8db4-12067e1608f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fixed",
+      "targets": [
+        ["css=.fixed", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "457dd0a5-9269-4c7c-bee3-406d5327c2e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=descricao",
+      "targets": [
+        ["name=descricao", "name"],
+        ["css=.flex:nth-child(2) > .rounded", "css:finder"],
+        ["xpath=//input[@name='descricao']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "supermercado"
+    }, {
+      "id": "054e75d0-5d31-4e59-8dc7-21ec322df2d5",
+      "comment": "",
+      "command": "type",
+      "target": "name=valor",
+      "targets": [
+        ["name=valor", "name"],
+        ["css=.w-full:nth-child(3) > .rounded", "css:finder"],
+        ["xpath=//input[@name='valor']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "300"
+    }, {
+      "id": "9104ebd1-e98a-42ab-aa77-0d7e5f93edd7",
+      "comment": "",
+      "command": "select",
+      "target": "name=categoria",
+      "targets": [],
+      "value": "label=Outros"
+    }, {
+      "id": "c559afe5-ab28-49f9-b8be-c343aae65e04",
+      "comment": "",
+      "command": "click",
+      "target": "name=formaPagamento",
+      "targets": [
+        ["name=formaPagamento", "name"],
+        ["css=.flex:nth-child(5) > .w-full", "css:finder"],
+        ["xpath=//select[@name='formaPagamento']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[5]/select", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d4c8c38-a884-4c90-88a2-33b6216c0382",
+      "comment": "",
+      "command": "click",
+      "target": "name=formaPagamento",
+      "targets": [
+        ["name=formaPagamento", "name"],
+        ["css=.flex:nth-child(5) > .w-full", "css:finder"],
+        ["xpath=//select[@name='formaPagamento']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[5]/select", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5853eba6-8ede-4757-9fe2-7d3dd95d3790",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-2",
+      "targets": [
+        ["css=.py-2", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3e793881-65e3-4d3e-8fc8-b28b07d1fb55",
+    "name": "Delete contabilidade",
+    "commands": [{
+      "id": "8bad672d-3ac4-44bc-9995-7745823b1630",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5c65bf1-aa68-4f54-a902-c8ddf793a713",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4d9ff1b-615f-4e83-865c-5f9ef86fcdb5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf2cb1cc-3fb4-4dbe-8485-79fc582d361c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(3)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contabilidade')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/contabilidade')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b0661f9-090c-4986-8c5e-240fce81a0fd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(3) .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(3) .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5ab3d97-cb4f-488e-a472-9ed61eaa9219",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "05faa276-cf99-4a56-9309-62af71a02609",
+    "name": "Update contabilidade",
+    "commands": [{
+      "id": "7f16d866-8cb3-4d77-bc5b-9741e06840f0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d92aac55-7746-46b8-aa77-0d2d563ef473",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x767",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c516e53-101d-44c7-a270-5bd259903d00",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bc99b00-938e-49bf-8cd2-bf74a9e5a42f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-montserrat:nth-child(3)",
+      "targets": [
+        ["css=.font-montserrat:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contabilidade')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/contabilidade')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0344e213-8073-413e-b057-75eab6731f40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(1) > path",
+      "targets": [
+        ["css=.grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c53dd097-a00e-4989-a964-e1da94b0542c",
+      "comment": "",
+      "command": "click",
+      "target": "name=valor",
+      "targets": [
+        ["name=valor", "name"],
+        ["css=.w-full:nth-child(3) > .rounded", "css:finder"],
+        ["xpath=//input[@name='valor']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25806be7-bd89-4b3b-8ad8-4794abf46f13",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-16",
+      "targets": [
+        ["css=.px-16", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a5176fa-f4ff-459f-8783-286b88e6449a",
+      "comment": "",
+      "command": "type",
+      "target": "name=valor",
+      "targets": [
+        ["name=valor", "name"],
+        ["css=.w-full:nth-child(3) > .rounded", "css:finder"],
+        ["xpath=//input[@name='valor']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "5fe622d1-2c87-4ab1-a85f-6baae4c48dd1",
+      "comment": "",
+      "command": "select",
+      "target": "name=categoria",
+      "targets": [],
+      "value": "label=Marketing"
+    }, {
+      "id": "b2ade302-6cb4-428b-8e15-53a2f31cdb45",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-2",
+      "targets": [
+        ["css=.py-2", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "08c68128-3403-4a97-9dbd-69a79f70bf1c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://beleza-pura.onrender.com/"],
+  "plugins": []
+}
