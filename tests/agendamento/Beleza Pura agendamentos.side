@@ -1,0 +1,375 @@
+{
+  "id": "55000a25-1aa1-4bf3-884a-41c0efbfa5f9",
+  "version": "2.0",
+  "name": "Beleza Pura agendamentos",
+  "url": "https://beleza-pura.onrender.com",
+  "tests": [{
+    "id": "bf937db5-f7fb-4cf3-9710-1bccd34d06b0",
+    "name": "Read agendamentos",
+    "commands": [{
+      "id": "baaa17e6-b2aa-43a7-bb6b-d058d6b543b6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ad676db-29ce-4686-b462-331759601344",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x767",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23a641cc-d567-4e34-99b3-84eacea3b5cd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c32c8485-d6c0-4497-9757-901a29012fe5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.active",
+      "targets": [
+        ["css=.active", "css:finder"],
+        ["xpath=//a[contains(text(),'Agendamentos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div[3]/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/overview/agendamentos')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9c795978-d36d-4610-8cc0-9fb432bb6ffa",
+    "name": "Create agendamentos",
+    "commands": [{
+      "id": "353d81d7-0327-4850-a8d7-d49797d09a5f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcc3cd31-290e-49d0-acd6-4931ef359916",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x767",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4c7f8d1-fb1d-438a-828b-ac86b700b787",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "99cc2edd-10ee-4ba1-bf43-233df178aed4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fixed",
+      "targets": [
+        ["css=.fixed", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='agendamento-container']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d7f935a-46cf-41d4-81cc-a7093d081699",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.gap-1:nth-child(1) > .flex-col", "css:finder"],
+        ["xpath=//select[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e4f11b4-5b1e-433d-a6ac-86cef21d3f61",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gap-8",
+      "targets": [
+        ["css=.gap-8", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div", "xpath:idRelative"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01cc0ebf-c0de-4948-bdaa-362c9e72bc42",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.gap-1:nth-child(1) > .flex-col", "css:finder"],
+        ["xpath=//select[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42e9334d-a142-4cac-b22e-9c0ae51a57a2",
+      "comment": "",
+      "command": "select",
+      "target": "name=nome",
+      "targets": [],
+      "value": "label=Antônio Ramos dos Reis"
+    }, {
+      "id": "0c5b107d-15be-4224-916d-c57308e4f058",
+      "comment": "",
+      "command": "click",
+      "target": "css=.italic",
+      "targets": [
+        ["css=.italic", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div[2]/div/div/p/span", "xpath:idRelative"],
+        ["xpath=//div/div/p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Selecionar procedimentos...')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1ba5eba-b8fa-4664-beb4-b30e04ffc3ee",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hover\\3A bg-gray-200:nth-child(1)",
+      "targets": [
+        ["css=.hover\\3A bg-gray-200:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6fe2ab9-fb59-4c88-b708-34078ed33681",
+      "comment": "",
+      "command": "select",
+      "target": "name=cabelereiro",
+      "targets": [],
+      "value": "label=Thiago L. Matos"
+    }, {
+      "id": "24f65f3c-1799-4a40-a500-e715ff4e6715",
+      "comment": "",
+      "command": "click",
+      "target": "css=.react-datepicker__day--021",
+      "targets": [
+        ["css=.react-datepicker__day--021", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div[2]/div/div/div/div/div[2]/div[4]/div[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c28a5a3-a40a-4bf2-b98d-affe24195139",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-blue-500:nth-child(7)",
+      "targets": [
+        ["css=.bg-blue-500:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div[2]/div/div[2]/p[6]", "xpath:idRelative"],
+        ["xpath=//p[6]", "xpath:position"],
+        ["xpath=//p[contains(.,'13:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6f42320-6698-4fe5-9db6-aa7acea4a924",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-\\[50\\%\\]",
+      "targets": [
+        ["css=.w-\\[50\\%\\]", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5eeb2199-70ff-4087-aa12-a4b0e57c4ae5",
+    "name": "Delete agendamentos",
+    "commands": [{
+      "id": "bc2eecfa-fc8c-4e95-8281-ffc7d940a429",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d27804c-e37a-44d2-ac72-dc8bfa2efe37",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x767",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "684bcfd7-e5d1-4461-b7e4-1986ada1dfa7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ee32498-a8ff-497b-9a84-d66f8c335a92",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(7) .flex .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(7) .flex .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "53c74cea-07a1-4b9a-b203-85b82c2d7516",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d39010c8-5f62-4426-8de8-ff18099a6083",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-xmark > path",
+      "targets": [
+        ["css=.fa-xmark > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "8706b0c1-7130-4a30-9af8-66ebdb0f6896",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(7) .flex .svg-inline--fa:nth-child(2) > path",
+      "targets": [
+        ["css=.grid:nth-child(7) .flex .svg-inline--fa:nth-child(2) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f9f9609-b175-4ee2-9fa2-7718ae1a8519",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-red-800",
+      "targets": [
+        ["css=.bg-red-800", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5276c8c5-c997-4ceb-aef7-00cc89c97f87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-xmark",
+      "targets": [
+        ["css=.fa-xmark", "css:finder"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a255165b-893d-466a-b417-c0af0bd7393a",
+    "name": "Update agendamentos",
+    "commands": [{
+      "id": "14adc340-1727-4e8a-aafb-e5a0c4dda0bf",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "565a90f1-ede7-4314-9e4b-2ba7ac047342",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1454x866",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91e5fa1f-3389-49ce-84d6-5573d8d9cd00",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [
+        ["css=.bg-brandGreen", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9aa330a6-8a23-4098-9c6e-40ced617d3e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid:nth-child(6) .flex .svg-inline--fa:nth-child(1) > path",
+      "targets": [
+        ["css=.grid:nth-child(6) .flex .svg-inline--fa:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b564001-f683-4773-bcf7-a11290f91716",
+      "comment": "",
+      "command": "click",
+      "target": "css=.react-datepicker__day--011",
+      "targets": [
+        ["css=.react-datepicker__day--011", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div[2]/div/div/div/div/div[2]/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb1776ea-c186-46a8-a6bf-449094a84c70",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-blue-500:nth-child(3)",
+      "targets": [
+        ["css=.bg-blue-500:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div[2]/div/div[2]/p[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'09:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "198b7011-8d2e-4687-9aa3-9b2459cb594a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-\\[50\\%\\]",
+      "targets": [
+        ["css=.w-\\[50\\%\\]", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1ce83f22-d03a-4b2b-af3e-fcd8f0848cc2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://beleza-pura.onrender.com/"],
+  "plugins": []
+}
