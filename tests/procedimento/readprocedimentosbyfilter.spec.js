@@ -16,6 +16,7 @@ describe('Read procedimentos by filter', function() {
   it('Read procedimentos by filter', async function() {
     await driver.get("https://beleza-pura.onrender.com/")
     await driver.manage().window().setRect({ width: 736, height: 765 })
+    await driver.findElement(By.css(".bg-brandGreen")).click()
     await driver.findElement(By.css(".font-montserrat:nth-child(2)")).click()
     await driver.findElement(By.id("30-45")).click()
     await driver.findElement(By.css(".grid-rows-5:nth-child(2) > .row-span-1:nth-child(3)")).click()

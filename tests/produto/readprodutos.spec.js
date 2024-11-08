@@ -16,6 +16,7 @@ describe('Read produtos', function() {
   it('Read produtos', async function() {
     await driver.get("https://beleza-pura.onrender.com/")
     await driver.manage().window().setRect({ width: 736, height: 765 })
+    await driver.findElement(By.css(".bg-brandGreen")).click()
     await driver.findElement(By.css(".font-montserrat:nth-child(5)")).click()
   })
 })

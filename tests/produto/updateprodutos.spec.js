@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('Create produto', function() {
+describe('Update produtos', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,17 +13,13 @@ describe('Create produto', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('Create produto', async function() {
+  it('Update produtos', async function() {
     await driver.get("https://beleza-pura.onrender.com/")
-    await driver.manage().window().setRect({ width: 736, height: 765 })
+    await driver.manage().window().setRect({ width: 1454, height: 866 })
     await driver.findElement(By.css(".bg-brandGreen")).click()
     await driver.findElement(By.css(".font-montserrat:nth-child(4)")).click()
-    await driver.findElement(By.css(".fixed")).click()
-    await driver.findElement(By.id("produto")).sendKeys("Mascara")
-    await driver.findElement(By.css(".flex-row:nth-child(2)")).click()
-    await driver.findElement(By.id("descricao")).sendKeys("Hidratante")
-    await driver.findElement(By.id("marca")).sendKeys("Kerastase")
-    await driver.findElement(By.id("pesoLiquido")).sendKeys("250g")
+    await driver.findElement(By.css(".grid:nth-child(1) .svg-inline--fa:nth-child(1) > path")).click()
+    await driver.findElement(By.id("pesoLiquido")).sendKeys("300ml")
     await driver.findElement(By.css(".mt-6")).click()
   })
 })

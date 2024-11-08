@@ -16,6 +16,7 @@ describe('Delete produto', function() {
   it('Delete produto', async function() {
     await driver.get("https://beleza-pura.onrender.com/")
     await driver.manage().window().setRect({ width: 736, height: 765 })
+    await driver.findElement(By.css(".bg-brandGreen")).click()
     await driver.findElement(By.css(".font-montserrat:nth-child(5)")).click()
     await driver.findElement(By.css(".grid:nth-child(2) > .col-span-1 .svg-inline--fa:nth-child(2) > path")).click()
     await driver.findElement(By.css(".bg-red-800")).click()

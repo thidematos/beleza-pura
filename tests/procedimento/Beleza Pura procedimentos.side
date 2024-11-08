@@ -21,6 +21,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "a17fd4a3-03fb-4b3f-8b05-fdc40eb2736c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "50e32e5e-7cf1-41ac-a48b-2433bec9076c",
       "comment": "",
       "command": "click",
@@ -49,6 +56,13 @@
       "comment": "",
       "command": "setWindowSize",
       "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d58a5c73-9443-444b-ba4d-df8509103047",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
       "targets": [],
       "value": ""
     }, {
@@ -134,7 +148,7 @@
       "id": "1bb39f92-b379-4dc9-944e-9c87f73ddc77",
       "comment": "",
       "command": "click",
-      "target": "css=.rounded-b-lg:nth-child(5)",
+      "target": "css=.rounded-b-lg:nth-child(2)",
       "targets": [
         ["css=.rounded-b-lg:nth-child(5)", "css:finder"],
         ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div[2]/div/div[2]/p[5]", "xpath:idRelative"],
@@ -169,6 +183,13 @@
       "comment": "",
       "command": "setWindowSize",
       "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb0dc46a-fc48-4686-abe0-fe03e5e95355",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
       "targets": [],
       "value": ""
     }, {
@@ -249,6 +270,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5d99d873-4203-4b41-b31e-e7aa72ab0e07",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "f974a16f-9e45-46d9-910a-765151f3e9a3",
       "comment": "",
       "command": "click",
@@ -298,6 +326,13 @@
       "comment": "",
       "command": "setWindowSize",
       "target": "736x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2f06cbd-9103-4440-9e8a-e275d3b43e18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bg-brandGreen",
       "targets": [],
       "value": ""
     }, {
