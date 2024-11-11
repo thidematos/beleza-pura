@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('Read produtos', function() {
+describe('Read contabilidade', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,10 +13,9 @@ describe('Read produtos', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('Read produtos', async function() {
-    await driver.get("https://beleza-pura.onrender.com/")
-    await driver.manage().window().setRect({ width: 736, height: 765 })
-    await driver.findElement(By.css(".bg-brandGreen")).click()
-    await driver.findElement(By.css(".font-montserrat:nth-child(5)")).click()
+  it('Read contabilidade', async function() {
+    await driver.get("https://beleza-pura.onrender.com/overview/usuarios")
+    await driver.manage().window().setRect({ width: 1454, height: 866 })
+    await driver.findElement(By.css(".font-montserrat:nth-child(3)")).click()
   })
 })

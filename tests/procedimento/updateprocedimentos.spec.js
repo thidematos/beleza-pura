@@ -16,6 +16,7 @@ describe('Update procedimentos', function() {
   it('Update procedimentos', async function() {
     await driver.get("https://beleza-pura.onrender.com/")
     await driver.manage().window().setRect({ width: 736, height: 765 })
+    await driver.findElement(By.css(".bg-brandGreen")).click()
     await driver.findElement(By.css(".font-montserrat:nth-child(2)")).click()
     await driver.findElement(By.css(".grid:nth-child(3) .svg-inline--fa:nth-child(1) > path")).click()
     await driver.findElement(By.css(".grid-cols-2")).click()
